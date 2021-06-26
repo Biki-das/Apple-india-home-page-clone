@@ -1,48 +1,22 @@
-const slides = document.querySelectorAll('.slide')
-const carousel = document.getElementById("carousel")
-
-const left = document.getElementById("left")
-const right = document.getElementById("right")
+// palindrome check
+// racecar -> racecar 
+// eye -> eye 
 
 
-const SLIDES_COUNT = slides.length
-
-let current_slide = 0;
-
-left.addEventListener('click',() => {
+// string -> reverse
+// reversed string === string (palindrome)
 
 
-current_slide++;
-if (current_slide > SLIDES_COUNT - 1) {
-    current_slide = 0;
+
+function palindromeCheck(str) {
+    var splitStr = str.split("")
+    var reverseStr = splitStr.reverse()
+    var finalStr = reverseStr.join("")
+   
+
+
+   str === finalStr ? `${console.log("it is a palindrome")}`:`${console.log("it is not a palindrome")}` 
 }
 
 
-updateCarousel();
-
-
-
-
-});
-
-right.addEventListener('click',() => {
-
-current_slide--;
-
-if (current_slide < 0) {
-    current_slide = SLIDES_COUNT - 1;
-}
-
-updateCarousel();
-  
-
-});
-
-function updateCarousel() {
-carousel.style.transform =  `translateX(${-current_slide * slides[0].offsetWidth}px)`
-    
-}
-
-
-
-
+palindromeCheck("eye")
